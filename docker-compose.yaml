@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    image: candy:v1
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    container_name: candy_container
+    ports:
+      - "3000:3000"  # Replace with your app's port if different
+    environment:
+      NODE_ENV: production
+    volumes:
+      - ./local_data:/usr/src/app  # Mount the current directory inside the container (optional)
+
